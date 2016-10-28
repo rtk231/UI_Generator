@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<title>Create Field</title>
+<th:block th:include="fragments/headerinc :: head"></th:block>
+</head>
+<body>
+	<div>
+		<div class="wrapper">
+		<th:block th:include="fragments/headerinc :: header"></th:block>
+			<div class="container transbox">
+				<form th:action="@{/field/save/}" method="post"
+					th:object="${field}" class="form-horizontal">
+					<h3>Create Field</h3>
+					<hr />
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field Name:</label>
+						<div class="input-group col-sm-12 col-md-12 col-lg-4">
+							<input type="text" th:field="*{name}" class="form-control"
+								id="fieldName" required="required" placeholder="Field Name" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-2 label">Field Type:</label>
+						<div class="input-group">
+							<select th:field="*{type}" class="form-control" id="type"
+								required="required" data-placeholder="Field Type">
+								<option value="">Select Type</option>
+								<option th:each="t : ${fieldTypes}" th:value="${t}"
+									th:text="${t}"></option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field Label:</label>
+						<div class="input-group col-sm-12 col-md-12 col-lg-4">
+							<input type="text" th:field="*{label}" class="form-control"
+								id="label" required="required" placeholder="Field Label" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+
+						<label class="col-md-2 label">Label Style:</label>
+						<div class="input-group col-sm-12 col-md-12 col-lg-4">
+							<input type="text" th:field="*{labelStyle}" class="form-control"
+								id="label" required="required" placeholder="Field Label Style" />
+						</div>
+					</div>
+
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field Description:</label>
+						<div class="input-group col-sm-12 col-md-12 col-lg-4">
+							<input type="text" th:field="*{description}" class="form-control"
+								id="description" placeholder="Field Description" />
+						</div>
+					</div>
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field PlaceHolder:</label>
+						<div class="input-group col-sm-12 col-md-12 col-lg-4">
+							<input type="text" th:field="*{placeHolder}" class="form-control"
+								id="placeHolder" placeholder="Field PlaceHolder" />
+						</div>
+					</div>
+
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field Style:</label>
+						<div class="input-group col-sm-12 col-md-12 col-lg-4">
+							<input type="text" th:field="*{style}" class="form-control"
+								id="style" placeholder="Field Style" />
+						</div>
+					</div>
+
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field Required:</label>
+						<div class="input-group col-sm-12 col-md-12 col-lg-4">
+							<input type="text" th:field="*{required}" class="form-control"
+								id="required" placeholder="Field Required Logic" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field ReadOnly:</label>
+						<div class="input-group col-sm-12 col-md-12 col-lg-4">
+							<input type="text" th:field="*{readOnly}" class="form-control"
+								id="hidden" placeholder="Field ReadOnly Logic" />
+						</div>
+					</div>
+
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field Hidden:</label>
+						<div class="input-group col-sm-12 col-md-12 col-lg-4">
+							<input type="text" th:field="*{hidden}" class="form-control"
+								id="hidden" placeholder="Field Hidden Logic" />
+						</div>
+					</div>
+
+
+					<div class="form-group">
+
+						<button type="button" class="btn btn-primary">Add More
+							Attributes</button>
+
+					</div>
+
+					
+
+
+
+
+					<div class="form-group">
+
+						<button type="submit" class="btn btn-primary">Save Field</button>
+
+					</div>
+
+
+				</form>
+			</div>
+
+		</div>
+		
+	</div>
+</body>
+</html>

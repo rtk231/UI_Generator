@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<th:block th:include="fragments/headerinc :: head"></th:block>
+<title>Show Field</title>
+</head>
+<body>
+	<div>
+		<div class="wrapper">
+			<th:block th:include="fragments/headerinc :: header"></th:block>
+			<div class="container transbox">
+
+				<form class="form-horizontal">
+					<h3>Field Info</h3>
+					<hr />
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field Name:</label>
+						<div class="col-md-4">
+							<p class="form-control-static" th:text="${field.name}"></p>
+						</div>
+
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-2 label">Field Type:</label>
+						<div class="col-md-4">
+							<p class="form-control-static" th:text="${field.type}"></p>
+						</div>
+
+
+					</div>
+
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field Label:</label>
+						<div class="col-md-4">
+							<p class="form-control-static" th:text="${field.label}"></p>
+						</div>
+
+					</div>
+					
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field Label Style:</label>
+						<div class="col-md-4">
+							<p class="form-control-static" th:text="${field.labelStyle}"></p>
+						</div>
+
+					</div>
+
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field Description:</label>
+						<div class="col-md-4">
+							<p class="form-control-static" th:text="${field.description}"></p>
+						</div>
+
+					</div>
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field PlaceHolder:</label>
+						<div class="col-md-4">
+							<p class="form-control-static" th:text="${field.placeHolder}"></p>
+						</div>
+
+					</div>
+
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field Style:</label>
+						<div class="col-md-4">
+							<p class="form-control-static" th:text="${field.style}"></p>
+						</div>
+
+
+					</div>
+
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field Required:</label>
+						<div class="col-md-4">
+							<p class="form-control-static" th:text="${field.required}"></p>
+						</div>
+
+					</div>
+					
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field ReadOnly:</label>
+						<div class="col-md-4">
+							<p class="form-control-static" th:text="${field.readOnly}"></p>
+						</div>
+
+					</div>
+
+					<div class="form-group">
+
+						<label class="col-md-2 label">Field Hidden:</label>
+						<div class="col-md-4">
+							<p class="form-control-static" th:text="${field.hidden}"></p>
+						</div>
+
+					</div>
+
+
+
+
+
+				</form>
+
+			</div>
+			<div class="container firstrow">
+			
+			<h3>Field Preview</h3>
+					<hr />
+				<div class="form-group">
+
+					<label class="label" ><span th:text="${field.label}"></span> :</label>
+					<div class="input-group" th:class="${field.style}"  th:if="${field.type ne 'select'}" >				
+						<input type="text" th:name="${field.name}"  th:readonly="${field.readOnly}" 
+							th:id="${field.id}" th:required="${field.required}" th:placeholder="${field.placeHolder}" />
+					
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+		
+	</div>
+</body>
+</html>
